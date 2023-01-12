@@ -38,7 +38,7 @@ export const WeekDay = styled(Text) <{ active: boolean }>`
 `;
 
 export const Hour = styled(Text) <{ active: boolean }>`
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 12px;
   font-weight: normal;
   line-height: 12px;
@@ -46,10 +46,10 @@ export const Hour = styled(Text) <{ active: boolean }>`
 `;
 
 export const Temperature = styled(Text) <{ active: boolean }>`
-  margin-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 24px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 12px;
   color: ${({ active }) => (active ? '#FFFFFF' : '#8D8D8D')};
 `;
 

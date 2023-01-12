@@ -18,6 +18,7 @@ interface InfoHourProps {
 
 export interface CommonBalloonClimateProps {
   active?: boolean;
+  hasShadow?: boolean;
 }
 
 export type ConditionalBalloonClimateProps = InfoDayProps | InfoHourProps;
