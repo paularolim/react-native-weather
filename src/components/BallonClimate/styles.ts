@@ -26,7 +26,7 @@ export const Day = styled(Text) <{ active: boolean }>`
   font-size: 24px;
   font-weight: bold;
   line-height: 24px;
-  color: ${({ active }) => (active ? '#B0A4FF' : '#FFFFFF')};
+  color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
 `;
 
 export const WeekDay = styled(Text) <{ active: boolean }>`
@@ -34,7 +34,7 @@ export const WeekDay = styled(Text) <{ active: boolean }>`
   font-size: 14px;
   font-weight: normal;
   line-height: 14px;
-  color: ${({ active }) => (active ? '#B0A4FF' : '#FFFFFF')};
+  color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
 `;
 
 export const Hour = styled(Text) <{ active: boolean }>`
@@ -42,7 +42,7 @@ export const Hour = styled(Text) <{ active: boolean }>`
   font-size: 12px;
   font-weight: normal;
   line-height: 12px;
-  color: ${({ active }) => (active ? '#FFFFFF' : '#8D8D8D')};
+  color: ${({ active }) => (active ? '#FFFFFF' : '#806EF8')};
 `;
 
 export const Temperature = styled(Text) <{ active: boolean }>`
@@ -50,7 +50,7 @@ export const Temperature = styled(Text) <{ active: boolean }>`
   font-size: 12px;
   font-weight: normal;
   line-height: 12px;
-  color: ${({ active }) => (active ? '#FFFFFF' : '#8D8D8D')};
+  color: ${({ active }) => (active ? '#FFFFFF' : '#806EF8')};
 `;
 
 export const styles = StyleSheet.create({
