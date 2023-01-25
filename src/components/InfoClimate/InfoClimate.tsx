@@ -5,12 +5,15 @@ import { ContainerProps, InfoClimateProps } from './types';
 import img from '../../assets/images/cloud-zap.png';
 
 export function InfoClimate({ variant, label }: InfoClimateProps) {
-  const Container = useCallback(({ children }: ContainerProps) => {
-    if (variant === 'solid') {
-      return <Solid style={styles.shadow}>{children}</Solid>;
-    }
-    return <Gradient colors={['#FFFFFF00', '#806EF866']}>{children}</Gradient>;
-  }, []);
+  const Container = useCallback(
+    ({ children }: ContainerProps) => {
+      if (variant === 'solid') {
+        return <Solid style={styles.shadow}>{children}</Solid>;
+      }
+      return <Gradient colors={['#FFFFFF00', '#806EF866']}>{children}</Gradient>;
+    },
+    [variant],
+  );
 
   return (
     <Wrapper>
