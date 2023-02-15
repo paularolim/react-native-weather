@@ -1,25 +1,14 @@
-import Geolocation, { GeolocationError, GeolocationResponse } from '@react-native-community/geolocation';
+import Geolocation from 'react-native-get-location';
 
 interface GeolocationProps {
   latitude: number | null;
   longitude: number | null;
 }
 
-export function getCurrentPosition(): GeolocationProps | null {
-  let data: GeolocationProps | null = null;
-
-  const onSuccess = (position: GeolocationResponse) => {
-    // console.log(position);
-    data = {
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-    };
-  };
-  const onError = (error: GeolocationError) => {
-    console.error(error);
-  };
-
-  Geolocation.getCurrentPosition(onSuccess, onError);
-
-  return data;
+export async function getCurrentPosition(): Promise<GeolocationProps | null> {
+  const location = await Geolocation.getCurrentPosition({
+    enableHighAccuracy: false,
+    timeout: 2000,
+  });
+  return { latitude: location.latitude, longitude: location.longitude };
 }
