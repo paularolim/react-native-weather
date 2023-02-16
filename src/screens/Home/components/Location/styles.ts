@@ -8,7 +8,7 @@ export const Place = styled(Text)`
   color: #1A1D26;
 `;
 
-export const Date = styled(Text)`
+export const DateText = styled(Text)`
   font-size: 12px;
   line-height: 18px;
   color: #8D8D8D;
