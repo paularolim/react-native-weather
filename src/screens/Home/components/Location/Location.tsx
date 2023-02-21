@@ -11,7 +11,7 @@ const date = moment(new Date()).format('dddd, DD/MMMM').replace('/', ' de ');
 
 export function Location() {
   const { position, getPosition, loadingPosition } = useGetPosition();
-  const { address, getAddress, loadingAddress } = useGetAddress();
+  const { address, getAddress, loadingAddress, errorAddress } = useGetAddress();
 
   useEffect(() => {
     getPosition();
@@ -20,6 +20,22 @@ export function Location() {
   useEffect(() => {
     getAddress(position);
   }, [position]);
+
+  if (errorAddress) {
+    return (
+      <View
+        style={{
+          paddingHorizontal: 24,
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Text>Erro :(</Text>
+        <Text>{errorAddress}</Text>
+      </View>
+    );
+  }
 
   if (loadingPosition || loadingAddress) {
     return (
