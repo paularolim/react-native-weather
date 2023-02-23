@@ -4,15 +4,10 @@ import { CardClimate } from '../../../../components/CardClimate';
 import { InfoClimate, InfoClimateLoading } from '../../../../components/InfoClimate';
 import { Shimmer } from '../../../../components/Shimmer';
 import { useGetOverviewClimate } from '../../../../hooks/useGetOverviewClimate';
-import { useGetPosition } from '../../../../hooks/useGetPosition';
+import { CardDetailsProps } from './types';
 
-export function CardDetails() {
-  const { position, getPosition, loadingPosition } = useGetPosition();
+export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
   const { getOverview, overviewInfo, loadingOverview } = useGetOverviewClimate();
-
-  useEffect(() => {
-    getPosition();
-  }, []);
 
   useEffect(() => {
     getOverview(position);

@@ -4,19 +4,14 @@ import moment from 'moment';
 
 import mapImg from '../../../../assets/images/map.png';
 import { DateText, LoadingContainer, LoadingDataContainer, Place } from './styles';
-import { useGetPosition } from '../../../../hooks/useGetPosition';
 import { useGetAddress } from '../../../../hooks/useGetAddress';
 import { Shimmer } from '../../../../components/Shimmer';
+import { LocationProps } from './types';
 
 const date = moment(new Date()).format('dddd, DD/MMMM').replace('/', ' de ');
 
-export function Location() {
-  const { position, getPosition, loadingPosition } = useGetPosition();
+export function Location({ loadingPosition, position }: LocationProps) {
   const { address, getAddress, loadingAddress, errorAddress } = useGetAddress();
-
-  useEffect(() => {
-    getPosition();
-  }, []);
 
   useEffect(() => {
     getAddress(position);

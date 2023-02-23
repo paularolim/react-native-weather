@@ -2,13 +2,13 @@
 import { useCallback, useState } from 'react';
 import { GeolocationProps, getCurrentPosition } from '../services/Geolocation';
 
-interface Result {
+export interface GetPositionOut {
   position: GeolocationProps | null
   getPosition: () => void
   loadingPosition: boolean
 }
 
-export function useGetPosition(): Result {
+export function useGetPosition(): GetPositionOut {
   const [position, setPosition] = useState<GeolocationProps | null>(null);
   const [loadingPosition, setLoadingPosition] = useState(true);
 
