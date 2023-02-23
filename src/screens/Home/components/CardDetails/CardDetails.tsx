@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { CardClimate } from '../../../../components/CardClimate';
-import { InfoClimate } from '../../../../components/InfoClimate';
+import { InfoClimate, InfoClimateLoading } from '../../../../components/InfoClimate';
+import { Shimmer } from '../../../../components/Shimmer';
 import { useGetOverviewClimate } from '../../../../hooks/useGetOverviewClimate';
 import { useGetPosition } from '../../../../hooks/useGetPosition';
 
@@ -17,17 +18,25 @@ export function CardDetails() {
     getOverview(position);
   }, [position]);
 
+  /* TODO: error feedback */
+
   if (loadingPosition || loadingOverview) {
     return (
-      <View
-        style={{
-          paddingHorizontal: 24,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Text>Carregando...</Text>
+      <View style={{ paddingHorizontal: 24 }}>
+        <Shimmer height={204} radius={24} />
+
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 34,
+            marginTop: 24,
+          }}
+        >
+          <InfoClimateLoading />
+          <InfoClimateLoading />
+          <InfoClimateLoading />
+        </View>
       </View>
     );
   }
