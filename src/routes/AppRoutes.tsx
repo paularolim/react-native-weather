@@ -1,16 +1,17 @@
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Home } from '../screens/Home';
+import { DrawerParamList } from './types';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator<DrawerParamList>();
 
 export function AppRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
+      <Drawer.Navigator screenOptions={{ headerShown: false }}>
+        <Drawer.Screen name="Home" component={Home} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
