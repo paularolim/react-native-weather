@@ -8,6 +8,7 @@ export interface ButtonContainerProps {
   hasShadow?: boolean;
   format?: ButtonContainerVariant;
   background?: 'default' | 'gradient';
+  onPress: () => void;
 }
 
 export interface ButtonLabelProps {
