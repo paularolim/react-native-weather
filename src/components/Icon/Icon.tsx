@@ -1,4 +1,5 @@
 import React from 'react';
+import { SvgProps } from 'react-native-svg';
 import { IconName, IconProps } from './types';
 
 import arrowRight from '../../assets/icons/arrow-right.svg';
@@ -11,7 +12,7 @@ import settings from '../../assets/icons/settings.svg';
 import location from '../../assets/icons/location.svg';
 import graph from '../../assets/icons/graph.svg';
 
-const options: Record<IconName, any> = {
+const options: Record<IconName, React.FC<SvgProps>> = {
   'arrow-right': arrowRight,
   'arrow-left': arrowLeft,
   'arrow-right-alt': arrowRightAlt,
