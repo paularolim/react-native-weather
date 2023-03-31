@@ -1,5 +1,5 @@
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { DrawerParamList } from '../../routes/types';
+import { DrawerParamList } from '../../routes';
 
 type ScreenProps = DrawerScreenProps<DrawerParamList, 'Home'>;
 
