@@ -1,12 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled, { css } from 'styled-components/native';
-import { ButtonContainerVariant } from './types';
+import { ButtonContainerBackground, ButtonContainerVariant } from './types';
 
-export const Container = styled(TouchableOpacity) <{ format: ButtonContainerVariant }>`
+export const Container = styled(TouchableOpacity) <{ format: ButtonContainerVariant, background: ButtonContainerBackground }>`
   flex-direction: row;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: ${({ background }) => (background === 'transparent' ? 'transparent' : '#FFFFFF')};
 
   ${({ format }) => {
     if (format === 'square') {

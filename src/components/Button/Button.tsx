@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Icon } from '../Icon';
 import { Container, ContainerGradient, IconContainer, IconGradient, Label, styles } from './styles';
 import { ButtonContainerProps, ButtonIconProps, ButtonLabelProps } from './types';
@@ -13,14 +13,19 @@ export function ButtonContainer({
 }: ButtonContainerProps) {
   if (background === 'gradient') {
     return (
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={onPress} style={hasShadow && styles.shadow}>
         <ContainerGradient colors={['#B0A4FF', '#806EF8']}>{children}</ContainerGradient>
       </TouchableOpacity>
     );
   }
 
   return (
-    <Container style={hasShadow && styles.shadow} format={format} onPress={onPress}>
+    <Container
+      background={background}
+      style={hasShadow && styles.shadow}
+      format={format}
+      onPress={onPress}
+    >
       {children}
     </Container>
   );

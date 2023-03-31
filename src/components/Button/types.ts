@@ -2,12 +2,13 @@ import { ReactNode } from 'react';
 import { IconName } from '../Icon';
 
 export type ButtonContainerVariant = 'default' | 'square' | 'rounded';
+export type ButtonContainerBackground = 'default' | 'gradient' | 'transparent';
 
 export interface ButtonContainerProps {
   children: ReactNode;
   hasShadow?: boolean;
   format?: ButtonContainerVariant;
-  background?: 'default' | 'gradient';
+  background?: ButtonContainerBackground;
   onPress: () => void;
 }
 
