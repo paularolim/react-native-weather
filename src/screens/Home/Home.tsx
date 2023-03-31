@@ -5,6 +5,7 @@ import { CardDetails } from './components/CardDetails';
 import { Location } from './components/Location';
 import { useGetPosition } from '../../hooks/useGetPosition';
 import { HomeProps } from './types';
+import { HourDetails } from './components/HourDetails';
 
 export function Home({ navigation }: HomeProps) {
   const { getPosition, position, loadingPosition } = useGetPosition();
@@ -24,6 +25,7 @@ export function Home({ navigation }: HomeProps) {
         <Location position={position} loadingPosition={loadingPosition} />
         <CardDetails position={position} loadingPosition={loadingPosition} />
         <View style={{ flex: 1 }} />
+        <HourDetails />
       </View>
     </SafeAreaView>
   );
