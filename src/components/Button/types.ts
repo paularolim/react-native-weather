@@ -9,7 +9,7 @@ export interface ButtonContainerProps {
   hasShadow?: boolean;
   format?: ButtonContainerVariant;
   background?: ButtonContainerBackground;
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 export interface ButtonLabelProps {
