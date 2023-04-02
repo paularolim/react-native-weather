@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button } from '../../../../components/Button';
-import { HeaderProps } from './types';
+
 import { Avatar } from '../../../../components/Avatar';
+import { Button } from '../../../../components/Button';
 import { Container } from './styles';
+import { HeaderProps } from './types';
 
 export function Header({ toggleDrawer }: HeaderProps) {
   return (

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled, { css } from 'styled-components/native';
+
 import { ButtonContainerBackground, ButtonContainerVariant } from './types';
 
 export const Container = styled(TouchableOpacity) <{ format: ButtonContainerVariant, background: ButtonContainerBackground }>`

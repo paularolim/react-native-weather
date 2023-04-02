@@ -1,6 +1,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useCallback } from 'react';
+
 import { Home } from '../screens/Home';
 import { DrawerMenu } from './components/DrawerMenu';
 import { DrawerParamList } from './types';

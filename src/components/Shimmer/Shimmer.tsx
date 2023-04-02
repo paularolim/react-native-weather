@@ -6,6 +6,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
+
 import { ShimmerProps } from './types';
 
 export function Shimmer({ height = 0, width = 0, radius = 0 }: ShimmerProps) {

@@ -1,2 +1,2 @@
-export * from './useGetPosition';
 export * from './types';
+export * from './useGetPosition';

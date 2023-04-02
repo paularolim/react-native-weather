@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useTheme } from 'styled-components';
+
 import { Icon } from '../Icon';
 import { Container, ContainerGradient, IconContainer, IconGradient, Label, styles } from './styles';
 import { ButtonContainerProps, ButtonIconProps, ButtonLabelProps } from './types';

@@ -1,5 +1,6 @@
-import { Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+
 import { GeolocationProps, getCurrentPosition } from '../../../services/Geolocation';
 
 export function DevGeolocation() {

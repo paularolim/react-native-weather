@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+
 import { CardClimate } from '../../../../components/CardClimate';
 import { InfoClimate, InfoClimateLoading } from '../../../../components/InfoClimate';
 import { Shimmer } from '../../../../components/Shimmer';
 import { useGetOverviewClimate } from '../../../../hooks/useGetOverviewClimate';
-import { CardDetailsProps } from './types';
 import { Container, InfoClimateContainer } from './styles';
+import { CardDetailsProps } from './types';
 
 export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
   const { getOverview, overviewInfo, loadingOverview } = useGetOverviewClimate();

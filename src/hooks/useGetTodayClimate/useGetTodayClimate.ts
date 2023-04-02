@@ -1,8 +1,9 @@
-import { useCallback, useMemo } from 'react';
 import moment from 'moment';
+import { useCallback, useMemo } from 'react';
+
 import { GeolocationProps } from '../../services/Geolocation';
-import { ForecastResponse, TodayClimateInfo, UseGetTodayClimateReturn } from './types';
 import { useFetchWeatherApi } from '../useFetch';
+import { ForecastResponse, TodayClimateInfo, UseGetTodayClimateReturn } from './types';
 
 export function useGetTodayClimate(): UseGetTodayClimateReturn {
   const { data, error, fetch, loading } = useFetchWeatherApi<ForecastResponse>();

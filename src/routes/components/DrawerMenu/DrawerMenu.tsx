@@ -1,15 +1,15 @@
-import React, { useCallback } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { FlatList, ListRenderItemInfo, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React, { useCallback } from 'react';
+import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from 'styled-components';
-import { Avatar } from '../../../components/Avatar';
-import { BottomImage, Container, Email, Middle, Name } from './styles';
-import { Button } from '../../../components/Button';
-import { DrawerItemProps } from './types';
-import { items } from './mock';
 
 import img from '../../../assets/images/moon-cloud-mid-rain.png';
+import { Avatar } from '../../../components/Avatar';
+import { Button } from '../../../components/Button';
+import { items } from './mock';
+import { BottomImage, Container, Email, Middle, Name } from './styles';
+import { DrawerItemProps } from './types';
 
 export function DrawerMenu() {
   const theme = useTheme();

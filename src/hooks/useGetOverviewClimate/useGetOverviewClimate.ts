@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { useCallback } from 'react';
+
 import { GeolocationProps } from '../../services/Geolocation';
 import { useFetchWeatherApi } from '../useFetch';
 import { UseGetOverviewClimateReturn, WeatherResponse } from './types';

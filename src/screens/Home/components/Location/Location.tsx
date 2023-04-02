@@ -1,10 +1,10 @@
+import moment from 'moment';
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import moment from 'moment';
 
-import { Container, DateText, ErrorData, LoadingDataContainer, PinImage, Place } from './styles';
-import { useGetAddress } from '../../../../hooks/useGetAddress';
 import { Shimmer } from '../../../../components/Shimmer';
+import { useGetAddress } from '../../../../hooks/useGetAddress';
+import { Container, DateText, ErrorData, LoadingDataContainer, PinImage, Place } from './styles';
 import { LocationProps } from './types';
 
 const date = moment(new Date()).format('dddd, DD/MMMM').replace('/', ' de ');
@@ -37,7 +37,9 @@ export function Location({ loadingPosition, position }: LocationProps) {
       <Container>
         <LoadingDataContainer>
           <Shimmer height={27} width={83} radius={4} />
+          <View style={{ height: 5 }} />
           <Shimmer height={27} width={121} radius={4} />
+          <View style={{ height: 5 }} />
           <Shimmer height={18} width={144} radius={4} />
         </LoadingDataContainer>
 

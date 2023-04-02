@@ -2,6 +2,7 @@
 import { LOCATIONIQ_API_KEY } from '@env';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { useCallback, useState } from 'react';
+
 import { UseFetchApiReturn } from './types';
 
 const apikey = LOCATIONIQ_API_KEY;

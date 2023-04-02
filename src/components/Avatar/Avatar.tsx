@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+
 import { Image, styles } from './styles';
 import { AvatarProps } from './types';
 

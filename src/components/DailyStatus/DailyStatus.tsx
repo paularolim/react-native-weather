@@ -1,4 +1,6 @@
 import React from 'react';
+
+import img from '../../assets/images/cloud-zap.png';
 import {
   Container,
   Date,
@@ -11,8 +13,6 @@ import {
   Temperature,
 } from './styles';
 import { DailyStatusProps } from './types';
-
-import img from '../../assets/images/cloud-zap.png';
 
 export function DailyStatus({ date, label, max, min }: DailyStatusProps) {
   return (

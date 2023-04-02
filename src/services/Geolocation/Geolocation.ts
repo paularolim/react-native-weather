@@ -1,5 +1,6 @@
 import { PermissionsAndroid, Platform } from 'react-native';
 import Geolocation from 'react-native-get-location';
+
 import { GeolocationProps } from './types';
 
 export async function getCurrentPosition(): Promise<GeolocationProps | null> {

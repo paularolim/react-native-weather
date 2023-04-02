@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
-import { Gradient, Icon, Label, Solid, styles, Wrapper } from './styles';
-import { ContainerProps, InfoClimateProps } from './types';
 
 import img from '../../assets/images/cloud-zap.png';
+import { Gradient, Icon, Label, Solid, styles, Wrapper } from './styles';
+import { ContainerProps, InfoClimateProps } from './types';
 
 export function InfoClimate({ variant, label }: InfoClimateProps) {
   const Container = useCallback(

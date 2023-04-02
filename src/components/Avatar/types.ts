@@ -1,4 +1,5 @@
 import { ImageProps } from 'react-native';
+
 import { avatar } from '../../styles/theme';
 
 export type AvatarProps = ImageProps & {

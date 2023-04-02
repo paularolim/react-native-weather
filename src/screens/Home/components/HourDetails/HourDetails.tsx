@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect } from 'react';
 import { FlatList, View } from 'react-native';
+
 import { BalloonClimate } from '../../../../components/BallonClimate';
 import { Button } from '../../../../components/Button';
+import { Shimmer } from '../../../../components/Shimmer';
 import { useGetTodayClimate } from '../../../../hooks/useGetTodayClimate';
 import { Container, Header, Today } from './styles';
 import { HourDetailsProps } from './types';
-import { Shimmer } from '../../../../components/Shimmer';
 
 export function HourDetails({ position }: HourDetailsProps) {
   const { getTodayClimate, todayClimateInfo, loadingTodayClimate } = useGetTodayClimate();

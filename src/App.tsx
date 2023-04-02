@@ -1,9 +1,10 @@
-import React from 'react';
-import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-native-gesture-handler';
 
+import moment from 'moment';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
+
 import { AppRoutes } from './routes';
 import { theme } from './styles/theme';
 

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import { useTheme } from 'styled-components';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Header } from './components/Header';
-import { CardDetails } from './components/CardDetails';
-import { Location } from './components/Location';
+import { useTheme } from 'styled-components';
+
 import { useGetPosition } from '../../hooks/useGetPosition';
-import { HomeProps } from './types';
+import { CardDetails } from './components/CardDetails';
+import { Header } from './components/Header';
 import { HourDetails } from './components/HourDetails';
+import { Location } from './components/Location';
+import { HomeProps } from './types';
 
 export function Home({ navigation }: HomeProps) {
   const theme = useTheme();

@@ -1,5 +1,6 @@
 import { Image as RNImage, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
+
 import { AvatarProps } from './types';
 
 export const Image = styled(RNImage) <{ size: AvatarProps['size'] }>`

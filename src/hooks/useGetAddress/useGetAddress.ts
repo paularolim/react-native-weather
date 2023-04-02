@@ -1,7 +1,8 @@
 import { useCallback, useMemo } from 'react';
+
 import { GeolocationProps } from '../../services/Geolocation';
-import { UseGetAddressReturn, GeoReverseResponse } from './types';
 import { useFetchGeoApi } from '../useFetch';
+import { GeoReverseResponse, UseGetAddressReturn } from './types';
 
 export function useGetAddress(): UseGetAddressReturn {
   const { data, error, fetch, loading } = useFetchGeoApi<GeoReverseResponse>();

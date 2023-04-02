@@ -1,5 +1,8 @@
 import React, { useMemo } from 'react';
 import { useTheme } from 'styled-components';
+
+import cloud from '../../assets/images/cloud-zap.png';
+import wind from '../../assets/images/wind.png';
 import {
   Container,
   Date,
@@ -15,9 +18,6 @@ import {
   Wrapper,
 } from './styles';
 import { CardClimateProps } from './types';
-
-import cloud from '../../assets/images/cloud-zap.png';
-import wind from '../../assets/images/wind.png';
 
 export function CardClimate({
   variant,

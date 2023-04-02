@@ -1,2 +1,2 @@
-export * from './useGetTodayClimate';
 export * from './types';
+export * from './useGetTodayClimate';
