@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 
-import img from '../../assets/images/cloud-zap.png';
+import img from '@assets/images/cloud-zap.png';
+
 import { Gradient, Icon, Label, Solid, styles, Wrapper } from './styles';
 import { ContainerProps, InfoClimateProps } from './types';
 

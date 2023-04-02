@@ -4,9 +4,10 @@ import { FlatList, ListRenderItemInfo, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from 'styled-components';
 
-import img from '../../../assets/images/moon-cloud-mid-rain.png';
-import { Avatar } from '../../../components/Avatar';
-import { Button } from '../../../components/Button';
+import img from '@assets/images/moon-cloud-mid-rain.png';
+import { Avatar } from '@components/Avatar';
+import { Button } from '@components/Button';
+
 import { items } from './mock';
 import { BottomImage, Container, Email, Middle, Name } from './styles';
 import { DrawerItemProps } from './types';

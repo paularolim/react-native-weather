@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect } from 'react';
 import { FlatList, View } from 'react-native';
 
-import { BalloonClimate } from '../../../../components/BallonClimate';
-import { Button } from '../../../../components/Button';
-import { Shimmer } from '../../../../components/Shimmer';
-import { useGetTodayClimate } from '../../../../hooks/useGetTodayClimate';
+import { BalloonClimate } from '@components/BallonClimate';
+import { Button } from '@components/Button';
+import { Shimmer } from '@components/Shimmer';
+import { useGetTodayClimate } from '@hooks/useGetTodayClimate';
+
 import { Container, Header, Today } from './styles';
 import { HourDetailsProps } from './types';
 

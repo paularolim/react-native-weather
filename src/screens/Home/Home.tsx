@@ -3,7 +3,8 @@ import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from 'styled-components';
 
-import { useGetPosition } from '../../hooks/useGetPosition';
+import { useGetPosition } from '@hooks/useGetPosition';
+
 import { CardDetails } from './components/CardDetails';
 import { Header } from './components/Header';
 import { HourDetails } from './components/HourDetails';

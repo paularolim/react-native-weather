@@ -5,8 +5,8 @@ import moment from 'moment';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { AppRoutes } from './routes';
-import { theme } from './styles/theme';
+import { AppRoutes } from '@routes/AppRoutes';
+import { theme } from '@styles/theme';
 
 moment.locale('pt-br');
 

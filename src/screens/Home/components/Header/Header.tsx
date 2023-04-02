@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Avatar } from '../../../../components/Avatar';
-import { Button } from '../../../../components/Button';
+import { Avatar } from '@components/Avatar';
+import { Button } from '@components/Button';
+
 import { Container } from './styles';
 import { HeaderProps } from './types';
 

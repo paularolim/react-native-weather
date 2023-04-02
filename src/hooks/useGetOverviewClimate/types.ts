@@ -1,4 +1,4 @@
-import { GeolocationProps } from '../../services/Geolocation';
+import { GeolocationProps } from '@services/Geolocation';
 
 export interface WeatherResponse {
   coord: {

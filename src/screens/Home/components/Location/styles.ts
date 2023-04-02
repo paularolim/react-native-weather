@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 
-import mapImg from '../../../../assets/images/map.png';
+import mapImg from '@assets/images/map.png';
 
 export const Container = styled(View)`
   padding: 0px 24px;

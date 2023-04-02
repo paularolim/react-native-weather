@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Shimmer } from '../Shimmer';
+import { Shimmer } from '@components/Shimmer';
 
 export function InfoClimateLoading() {
   return (

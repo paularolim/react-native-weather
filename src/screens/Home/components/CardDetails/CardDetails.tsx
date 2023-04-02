@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { CardClimate } from '../../../../components/CardClimate';
-import { InfoClimate, InfoClimateLoading } from '../../../../components/InfoClimate';
-import { Shimmer } from '../../../../components/Shimmer';
-import { useGetOverviewClimate } from '../../../../hooks/useGetOverviewClimate';
+import { CardClimate } from '@components/CardClimate';
+import { InfoClimate, InfoClimateLoading } from '@components/InfoClimate';
+import { Shimmer } from '@components/Shimmer';
+import { useGetOverviewClimate } from '@hooks/useGetOverviewClimate';
+
 import { Container, InfoClimateContainer } from './styles';
 import { CardDetailsProps } from './types';
 

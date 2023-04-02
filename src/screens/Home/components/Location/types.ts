@@ -1,3 +1,3 @@
-import { GetPositionOut } from '../../../../hooks/useGetPosition';
+import { GetPositionOut } from '@hooks/useGetPosition';
 
 export type LocationProps = Omit<GetPositionOut, 'getPosition'>

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { IconName } from '../Icon';
+import { IconName } from '@components/Icon';
 
 export type ButtonContainerVariant = 'default' | 'square' | 'rounded';
 export type ButtonContainerBackground = 'default' | 'gradient' | 'transparent';

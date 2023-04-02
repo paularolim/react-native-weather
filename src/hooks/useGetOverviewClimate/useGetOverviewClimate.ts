@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 import { useCallback } from 'react';
 
-import { GeolocationProps } from '../../services/Geolocation';
-import { useFetchWeatherApi } from '../useFetch';
+import { useFetchWeatherApi } from '@hooks/useFetch';
+import { GeolocationProps } from '@services/Geolocation';
+
 import { UseGetOverviewClimateReturn, WeatherResponse } from './types';
 
 export function useGetOverviewClimate(): UseGetOverviewClimateReturn {

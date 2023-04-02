@@ -2,7 +2,8 @@ import React, { useCallback } from 'react';
 import { View } from 'react-native';
 import { useTheme } from 'styled-components';
 
-import img from '../../assets/images/cloud-zap.png';
+import img from '@assets/images/cloud-zap.png';
+
 import { Day, Gradient, Hour, Icon, Solid, styles, Temperature, WeekDay } from './styles';
 import { BalloonClimateProps, ContainerProps } from './types';
 

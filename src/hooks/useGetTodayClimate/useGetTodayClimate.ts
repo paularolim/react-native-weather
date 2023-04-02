@@ -1,8 +1,9 @@
 import moment from 'moment';
 import { useCallback, useMemo } from 'react';
 
-import { GeolocationProps } from '../../services/Geolocation';
-import { useFetchWeatherApi } from '../useFetch';
+import { useFetchWeatherApi } from '@hooks/useFetch';
+import { GeolocationProps } from '@services/Geolocation';
+
 import { ForecastResponse, TodayClimateInfo, UseGetTodayClimateReturn } from './types';
 
 export function useGetTodayClimate(): UseGetTodayClimateReturn {

@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import { useCallback, useState } from 'react';
 
-import { GeolocationProps, getCurrentPosition } from '../../services/Geolocation';
+import { GeolocationProps, getCurrentPosition } from '@services/Geolocation';
+
 import { GetPositionOut } from './types';
 
 export function useGetPosition(): GetPositionOut {

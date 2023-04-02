@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { useTheme } from 'styled-components';
 
-import cloud from '../../assets/images/cloud-zap.png';
-import wind from '../../assets/images/wind.png';
+import cloud from '@assets/images/cloud-zap.png';
+import wind from '@assets/images/wind.png';
+
 import {
   Container,
   Date,

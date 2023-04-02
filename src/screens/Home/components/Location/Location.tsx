@@ -2,8 +2,9 @@ import moment from 'moment';
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
 
-import { Shimmer } from '../../../../components/Shimmer';
-import { useGetAddress } from '../../../../hooks/useGetAddress';
+import { Shimmer } from '@components/Shimmer';
+import { useGetAddress } from '@hooks/useGetAddress';
+
 import { Container, DateText, ErrorData, LoadingDataContainer, PinImage, Place } from './styles';
 import { LocationProps } from './types';
 
