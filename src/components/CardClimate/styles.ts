@@ -9,7 +9,7 @@ export const Wrapper = styled(View)`
 
 export const Container = styled(LinearGradient)`
   padding-bottom: 24px;
-  border-radius: 24px;
+  border-radius: ${({ theme }) => theme.radius.lg}px;
 `;
 
 export const Header = styled(View)`
@@ -31,17 +31,17 @@ export const Icon = styled(Image)`
 `;
 
 export const Temperature = styled(Text)`
-  font-size: 56px;
-  line-height: 56px;
-  font-weight: bold;
-  color: #EEEEEE;
+  font-size: ${({ theme }) => theme.fontSize['6xl']}px;
+  line-height: ${({ theme }) => theme.lineHeight['6xl']}px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.surfaceVariant};
 `;
 
 export const ThermalSensation = styled(Text)`
-  font-size: 12px;
-  line-height: 12px;
-  font-weight: normal;
-  color: #EEEEEE;
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.fontSize.xs}px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.surfaceVariant};
 `;
 
 export const Middle = styled(View)`
@@ -55,17 +55,17 @@ export const Middle = styled(View)`
 export const MiddleInfo = styled(View)``;
 
 export const Status = styled(Text)`
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  color: #EEEEEE;
+  font-size: ${({ theme }) => theme.fontSize.base}px;
+  line-height: ${({ theme }) => theme.fontSize.base}px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.surfaceVariant};
 `;
 
 export const Date = styled(Text)`
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: normal;
-  color: #EEEEEE;
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.fontSize.xs}px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.surfaceVariant};
 `;
 
 export const WindIcon = styled(Image)`

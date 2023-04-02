@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useTheme } from 'styled-components';
 import {
   Container,
   Date,
@@ -26,9 +27,20 @@ export function CardClimate({
   date,
   status,
 }: CardClimateProps) {
+  const theme = useTheme();
+
   const gradient = useMemo(
-    () => (variant === 'primary' ? ['#AECDFF', '#5896FD'] : ['#B0A4FF', '#806EF8']),
-    [variant],
+    () =>
+      variant === 'primary'
+        ? [theme.colors.primaryContainer, theme.colors.primary]
+        : [theme.colors.secondaryContainer, theme.colors.secondary],
+    [
+      theme.colors.primary,
+      theme.colors.primaryContainer,
+      theme.colors.secondary,
+      theme.colors.secondaryContainer,
+      variant,
+    ],
   );
 
   return (
