@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 
-export type UseFetchWeatherApiReturn<T> = {
+export type UseFetchApiReturn<T> = {
   fetch: (params: AxiosRequestConfig) => void,
   loading: boolean,
   error: string,

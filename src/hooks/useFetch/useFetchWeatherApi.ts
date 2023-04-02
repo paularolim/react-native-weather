@@ -1,14 +1,15 @@
+/* eslint-disable no-console */
 import { OPEN_WEATHER_API_KEY } from '@env';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { useCallback, useState } from 'react';
-import { UseFetchWeatherApiReturn } from './types';
+import { UseFetchApiReturn } from './types';
 
 const appid = OPEN_WEATHER_API_KEY;
-const baseURL = 'https://api.openweathermap.org/data/2.5/';
+const baseURL = 'https://api.openweathermap.org/';
 const httpClient: AxiosInstance = axios.create({ baseURL, params: { appid } });
 const headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
 
-export function useFetchWeatherApi<T>(): UseFetchWeatherApiReturn<T> {
+export function useFetchWeatherApi<T>(): UseFetchApiReturn<T> {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [data, setData] = useState<T | null>(null);
@@ -24,6 +25,7 @@ export function useFetchWeatherApi<T>(): UseFetchWeatherApiReturn<T> {
       setError('');
       setLoading(false);
     }).catch((_error) => {
+      console.log(error);
       setData(null);
       setError(_error?.message);
       setLoading(false);
