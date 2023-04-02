@@ -55,7 +55,7 @@ export function useGetTodayClimate(): UseGetTodayClimateReturn {
       return formatted;
     }
     return null;
-  }, []);
+  }, [data]);
 
   return {
     todayClimateInfo,

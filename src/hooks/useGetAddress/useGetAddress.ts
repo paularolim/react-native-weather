@@ -26,7 +26,7 @@ export function useGetAddress(): UseGetAddressReturn {
       return `${city},\n${data.address.state}`;
     }
     return '';
-  }, []);
+  }, [data]);
 
   return { address, loadingAddress: loading, errorAddress: error, getAddress };
 }
