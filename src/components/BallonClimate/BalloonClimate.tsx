@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { View } from 'react-native';
+import { useTheme } from 'styled-components';
 import { Day, Gradient, Hour, Icon, Solid, styles, Temperature, WeekDay } from './styles';
 import { BalloonClimateProps, ContainerProps } from './types';
 
@@ -11,6 +12,8 @@ export function BalloonClimate({
   hasShadow = false,
   info,
 }: BalloonClimateProps) {
+  const theme = useTheme();
+
   const Container = useCallback(
     ({ children }: ContainerProps) => {
       if (variant === 'day' && active) {
@@ -19,20 +22,32 @@ export function BalloonClimate({
       if (variant === 'day' && !active) {
         return (
           <View style={hasShadow && styles.shadow}>
-            <Gradient colors={['#AECDFF', '#5896FD']}>{children}</Gradient>
+            <Gradient colors={[theme.colors.primary, theme.colors.primaryContainer]}>
+              {children}
+            </Gradient>
           </View>
         );
       }
       if (variant === 'hour' && active) {
         return (
           <View style={[hasShadow && styles.shadow, styles.purpleShadow]}>
-            <Gradient colors={['#B0A4FF', '#806EF8']}>{children}</Gradient>
+            <Gradient colors={[theme.colors.secondaryContainer, theme.colors.secondary]}>
+              {children}
+            </Gradient>
           </View>
         );
       }
       return <Solid style={hasShadow && styles.shadow}>{children}</Solid>;
     },
-    [active, hasShadow, variant],
+    [
+      active,
+      hasShadow,
+      theme.colors.primary,
+      theme.colors.primaryContainer,
+      theme.colors.secondary,
+      theme.colors.secondaryContainer,
+      variant,
+    ],
   );
 
   const Content = useCallback(() => {
@@ -49,9 +64,9 @@ export function BalloonClimate({
     const { hour, temperature } = info;
     return (
       <>
-        <Hour active={active}>{hour}</Hour>
+        <Hour>{hour}</Hour>
         <Icon source={img} />
-        <Temperature active={active}>{temperature}</Temperature>
+        <Temperature>{temperature}</Temperature>
       </>
     );
   }, [active, info, variant]);

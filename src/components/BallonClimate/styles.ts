@@ -3,15 +3,15 @@ import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const Solid = styled(View)`
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 12px 10px;
-  border-radius: 50px;
+  border-radius: ${({ theme }) => theme.radius.xlg}px;
   align-items: center;
 `;
 
 export const Gradient = styled(LinearGradient)`
   padding: 12px 10px;
-  border-radius: 50px;
+  border-radius:  ${({ theme }) => theme.radius.xlg}px;
   align-items: center;
 `;
 
@@ -23,34 +23,36 @@ export const Icon = styled(Image)`
 
 export const Day = styled(Text) <{ active: boolean }>`
   margin-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 24px;
+  font-size:  ${({ theme }) => theme.fontSize['2xl']}px;
+  line-height:  ${({ theme }) => theme.fontSize['2xl']}px;
+  /* TODO: apply theme */
   color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
+  font-weight: bold;
 `;
 
 export const WeekDay = styled(Text) <{ active: boolean }>`
   margin-top: 3px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 14px;
+  font-size:  ${({ theme }) => theme.fontSize.sm}px;
+  line-height:  ${({ theme }) => theme.fontSize.sm}px;
+  /* TODO: apply theme */
   color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
+  font-weight: normal;
 `;
 
-export const Hour = styled(Text) <{ active: boolean }>`
+export const Hour = styled(Text)`
   margin-bottom: 12px;
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 12px;
-  color: ${({ active }) => (active ? '#FFFFFF' : '#806EF8')};
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.lineHeight.xs}px;
+  color: ${({ theme }) => theme.colors.onSecondaryContainer};
+  font-weight: 400;
 `;
 
-export const Temperature = styled(Text) <{ active: boolean }>`
+export const Temperature = styled(Text)`
   margin-top: 12px;
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 12px;
-  color: ${({ active }) => (active ? '#FFFFFF' : '#806EF8')};
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.lineHeight.xs}px;
+  color: ${({ theme }) => theme.colors.onSecondaryContainer};
+  font-weight: 400;
 `;
 
 export const styles = StyleSheet.create({
