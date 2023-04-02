@@ -19,7 +19,7 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "simple-import-sort"
+    "eslint-plugin-import-helpers"
   ],
   "rules": {
     "react/jsx-filename-extension": [
@@ -44,7 +44,24 @@
     "react/jsx-props-no-spreading": "off",
     "no-confusing-arrow": "off",
     "implicit-arrow-linebreak": "off",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^@assets|@components|@hooks|@routes|@screens|@services|@style/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
   }
 }
