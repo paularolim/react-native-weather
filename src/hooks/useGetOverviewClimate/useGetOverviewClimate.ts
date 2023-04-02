@@ -20,7 +20,7 @@ export function useGetOverviewClimate(): UseGetOverviewClimateReturn {
         },
       });
     }
-  }, []);
+  }, [fetch]);
 
   return {
     getOverview,

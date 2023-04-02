@@ -27,7 +27,7 @@ export function useFetchGeoApi<T>(): UseFetchApiReturn<T> {
         setLoading(false);
       })
       .catch((_error) => {
-        console.log(error);
+        console.log(_error);
         setData(null);
         setError(_error?.message);
         setLoading(false);

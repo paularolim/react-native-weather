@@ -14,9 +14,7 @@ export function Home({ navigation }: HomeProps) {
     navigation.toggleDrawer();
   };
 
-  useEffect(() => {
-    getPosition();
-  }, []);
+  useEffect(getPosition, [getPosition]);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

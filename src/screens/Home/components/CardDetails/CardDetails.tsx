@@ -11,7 +11,7 @@ export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
 
   useEffect(() => {
     getOverview(position);
-  }, [position]);
+  }, [getOverview, position]);
 
   /* TODO: error feedback */
 

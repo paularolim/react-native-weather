@@ -25,7 +25,7 @@ export function HourDetails({ position }: HourDetailsProps) {
 
   useEffect(() => {
     getTodayClimate(position);
-  }, [position]);
+  }, [getTodayClimate, position]);
 
   return (
     <View>

@@ -22,7 +22,7 @@ export function DrawerMenu() {
         <Button.Label fontWeight="bold">{item.label}</Button.Label>
       </Button.Container>
     ),
-    [],
+    [navigate],
   );
 
   return (

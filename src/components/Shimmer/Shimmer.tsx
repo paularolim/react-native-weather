@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
@@ -20,13 +20,11 @@ export function Shimmer({ height = 0, width = 0, radius = 0 }: ShimmerProps) {
     return { backgroundColor };
   });
 
-  const handleAnimate = () => {
+  const handleAnimate = useCallback(() => {
     rotation.value = withRepeat(withTiming(1, { duration: 700 }), -1, true);
-  };
+  }, [rotation]);
 
-  useEffect(() => {
-    handleAnimate();
-  }, []);
+  useEffect(handleAnimate, [handleAnimate]);
 
   return (
     <Animated.View

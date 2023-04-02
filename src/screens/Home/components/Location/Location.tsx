@@ -15,7 +15,7 @@ export function Location({ loadingPosition, position }: LocationProps) {
 
   useEffect(() => {
     getAddress(position);
-  }, [position]);
+  }, [getAddress, position]);
 
   if (errorAddress) {
     return (

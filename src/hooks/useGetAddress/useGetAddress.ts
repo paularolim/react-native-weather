@@ -18,7 +18,7 @@ export function useGetAddress(): UseGetAddressReturn {
         },
       });
     }
-  }, []);
+  }, [fetch]);
 
   const address = useMemo(() => {
     if ((data?.address?.city || data?.address?.town) && data?.address?.state) {
@@ -26,7 +26,7 @@ export function useGetAddress(): UseGetAddressReturn {
       return `${city},\n${data.address.state}`;
     }
     return '';
-  }, [data]);
+  }, [data?.address?.city, data?.address?.state, data?.address?.town]);
 
   return { address, loadingAddress: loading, errorAddress: error, getAddress };
 }

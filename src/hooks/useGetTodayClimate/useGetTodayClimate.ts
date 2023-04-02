@@ -21,7 +21,7 @@ export function useGetTodayClimate(): UseGetTodayClimateReturn {
         },
       });
     }
-  }, []);
+  }, [fetch]);
 
   const todayClimateInfo = useMemo(() => {
     if (data) {
