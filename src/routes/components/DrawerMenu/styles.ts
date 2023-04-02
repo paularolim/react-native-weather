@@ -8,17 +8,17 @@ export const Container = styled(LinearGradient)`
 `;
 
 export const Name = styled(Text)`
-  color: #1A1D26;
-  font-size: 24px;
-  line-height: 32px;
+  color: ${({ theme }) => theme.colors.onBackground};
+  font-size: ${({ theme }) => theme.fontSize['2xl']}px;
+  line-height: ${({ theme }) => theme.fontSize['2xl']}px;
   font-weight: 700;
   margin-top: 52px;
 `;
 
 export const Email = styled(Text)`
-  color: #8D8D8D;
-  font-size: 12px;
-  line-height: 18px;
+  color: ${({ theme }) => theme.colors.outline};
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.fontSize.xs}px;
   font-weight: 400;
 `;
 
