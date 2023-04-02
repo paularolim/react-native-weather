@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 import moment from 'moment';
 import { GeolocationProps } from '../../services/Geolocation';
 import { ForecastResponse, TodayClimateInfo, UseGetTodayClimateReturn } from './types';
-import { useFetchWeatherApi } from '../useFetchWeatherApi';
+import { useFetchWeatherApi } from '../useFetch';
 
 export function useGetTodayClimate(): UseGetTodayClimateReturn {
   const { data, error, fetch, loading } = useFetchWeatherApi<ForecastResponse>();
@@ -11,7 +11,7 @@ export function useGetTodayClimate(): UseGetTodayClimateReturn {
     if (position && position.latitude && position.longitude) {
       fetch({
         method: 'get',
-        url: 'forecast',
+        url: 'data/2.5/forecast',
         params: {
           lat: position.latitude,
           lon: position.longitude,

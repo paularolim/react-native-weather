@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { useCallback } from 'react';
 import { GeolocationProps } from '../../services/Geolocation';
-import { useFetchWeatherApi } from '../useFetchWeatherApi';
+import { useFetchWeatherApi } from '../useFetch';
 import { UseGetOverviewClimateReturn, WeatherResponse } from './types';
 
 export function useGetOverviewClimate(): UseGetOverviewClimateReturn {
@@ -11,7 +11,7 @@ export function useGetOverviewClimate(): UseGetOverviewClimateReturn {
     if (position && position.latitude && position.longitude) {
       fetch({
         method: 'get',
-        url: 'weather',
+        url: 'data/2.5/weather',
         params: {
           lat: position.latitude,
           lon: position.longitude,
