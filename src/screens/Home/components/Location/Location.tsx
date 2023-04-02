@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import moment from 'moment';
 
-import mapImg from '../../../../assets/images/map.png';
-import { DateText, LoadingContainer, LoadingDataContainer, Place } from './styles';
+import { Container, DateText, ErrorData, LoadingDataContainer, PinImage, Place } from './styles';
 import { useGetAddress } from '../../../../hooks/useGetAddress';
 import { Shimmer } from '../../../../components/Shimmer';
 import { LocationProps } from './types';
@@ -19,31 +18,23 @@ export function Location({ loadingPosition, position }: LocationProps) {
 
   if (errorAddress) {
     return (
-      <View
-        style={{
-          paddingHorizontal: 24,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginVertical: 24,
-        }}
-      >
-        <View>
+      <Container>
+        <ErrorData>
           <Place>
             Ops!
             {'\n'}
             Houve um erro.
           </Place>
           <DateText>Tente novamente mais tarde :(</DateText>
-        </View>
-        <Image source={mapImg} style={{ width: 60, height: 70, resizeMode: 'contain' }} />
-      </View>
+        </ErrorData>
+        <PinImage />
+      </Container>
     );
   }
 
   if (loadingPosition || loadingAddress) {
     return (
-      <LoadingContainer>
+      <Container>
         <LoadingDataContainer>
           <Shimmer height={27} width={83} radius={4} />
           <Shimmer height={27} width={121} radius={4} />
@@ -51,25 +42,17 @@ export function Location({ loadingPosition, position }: LocationProps) {
         </LoadingDataContainer>
 
         <Shimmer height={82} width={58} radius={4} />
-      </LoadingContainer>
+      </Container>
     );
   }
 
   return (
-    <View
-      style={{
-        paddingHorizontal: 24,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginVertical: 24,
-      }}
-    >
+    <Container>
       <View>
         <Place>{address}</Place>
         <DateText>{date}</DateText>
       </View>
-      <Image source={mapImg} style={{ width: 60, height: 70, resizeMode: 'contain' }} />
-    </View>
+      <PinImage />
+    </Container>
   );
 }
