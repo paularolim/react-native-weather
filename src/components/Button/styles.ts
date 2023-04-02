@@ -6,7 +6,7 @@ import { ButtonContainerBackground, ButtonContainerVariant } from './types';
 export const Container = styled(TouchableOpacity) <{ format: ButtonContainerVariant, background: ButtonContainerBackground }>`
   flex-direction: row;
   align-items: center;
-  background-color: ${({ background }) => (background === 'transparent' ? 'transparent' : '#FFFFFF')};
+  background-color: ${({ theme, background }) => (background === 'transparent' ? 'transparent' : theme.colors.background)};
 
   ${({ format }) => {
     if (format === 'square') {
@@ -26,7 +26,7 @@ export const Label = styled(Text) <{ color?: string, fontSize?: number, fontWeig
   font-size: ${({ fontSize }) => fontSize || 12}px;
   line-height: 18px;
   font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
-  color: ${({ color }) => color || '#000000'};
+  color: ${({ theme, color }) => color || theme.colors.background};
 `;
 
 export const ContainerGradient = styled(LinearGradient)`

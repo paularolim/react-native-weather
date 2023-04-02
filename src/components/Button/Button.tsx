@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import { useTheme } from 'styled-components';
 import { Icon } from '../Icon';
 import { Container, ContainerGradient, IconContainer, IconGradient, Label, styles } from './styles';
 import { ButtonContainerProps, ButtonIconProps, ButtonLabelProps } from './types';
@@ -11,10 +12,14 @@ export function ButtonContainer({
   background = 'default',
   onPress,
 }: ButtonContainerProps) {
+  const theme = useTheme();
+
   if (background === 'gradient') {
     return (
       <TouchableOpacity onPress={onPress} style={hasShadow && styles.shadow}>
-        <ContainerGradient colors={['#B0A4FF', '#806EF8']}>{children}</ContainerGradient>
+        <ContainerGradient colors={[theme.colors.secondaryContainer, theme.colors.secondary]}>
+          {children}
+        </ContainerGradient>
       </TouchableOpacity>
     );
   }
@@ -40,9 +45,11 @@ export function ButtonLabel({ children, color, fontSize, fontWeight }: ButtonLab
 }
 
 export function ButtonIcon({ name, background }: ButtonIconProps) {
+  const theme = useTheme();
+
   if (background === 'gradient') {
     return (
-      <IconGradient colors={['#AECDFF', '#5896FD']}>
+      <IconGradient colors={[theme.colors.primary, theme.colors.primaryContainer]}>
         <Icon name={name} />
       </IconGradient>
     );
