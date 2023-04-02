@@ -25,7 +25,7 @@ export function Home({ navigation }: HomeProps) {
         <Location position={position} loadingPosition={loadingPosition} />
         <CardDetails position={position} loadingPosition={loadingPosition} />
         <View style={{ flex: 1 }} />
-        <HourDetails />
+        <HourDetails position={position} loadingPosition={loadingPosition} />
       </View>
     </SafeAreaView>
   );

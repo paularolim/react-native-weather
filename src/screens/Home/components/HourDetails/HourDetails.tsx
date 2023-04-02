@@ -1,23 +1,31 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { FlatList, View } from 'react-native';
 import { BalloonClimate } from '../../../../components/BallonClimate';
 import { Button } from '../../../../components/Button';
+import { useGetTodayClimate } from '../../../../hooks/useGetTodayClimate';
 import { Today } from './styles';
+import { HourDetailsProps } from './types';
 
-export function HourDetails() {
+export function HourDetails({ position }: HourDetailsProps) {
+  const { getTodayClimate, todayClimateInfo } = useGetTodayClimate();
+
   const Separator = useCallback(() => <View style={{ width: 12 }} />, []);
 
   const Item = useCallback(
     ({ item }) => (
       <BalloonClimate
         variant="hour"
-        info={{ hour: item.hour, temperature: item.temperature }}
+        info={{ hour: item.hour, temperature: item.temp }}
         active={item.active}
         hasShadow
       />
     ),
     [],
   );
+
+  useEffect(() => {
+    getTodayClimate(position);
+  }, [position]);
 
   return (
     <View>
@@ -38,17 +46,8 @@ export function HourDetails() {
         </Button.Container>
       </View>
       <FlatList
-        data={[
-          { id: '1', hour: '12:00', temperature: '27°' },
-          { id: '2', hour: '12:00', temperature: '27°', active: true },
-          { id: '3', hour: '12:00', temperature: '27°' },
-          { id: '4', hour: '12:00', temperature: '27°' },
-          { id: '5', hour: '12:00', temperature: '27°' },
-          { id: '6', hour: '12:00', temperature: '27°' },
-          { id: '7', hour: '12:00', temperature: '27°' },
-          { id: '8', hour: '12:00', temperature: '27°' },
-        ]}
-        keyExtractor={(item) => item.id}
+        data={todayClimateInfo}
+        keyExtractor={(item, index) => `${item.hour}_${item.temp}_${index}`}
         renderItem={Item}
         horizontal
         showsHorizontalScrollIndicator={false}
