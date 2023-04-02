@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
 import { CardClimate } from '../../../../components/CardClimate';
 import { InfoClimate, InfoClimateLoading } from '../../../../components/InfoClimate';
 import { Shimmer } from '../../../../components/Shimmer';
 import { useGetOverviewClimate } from '../../../../hooks/useGetOverviewClimate';
 import { CardDetailsProps } from './types';
+import { Container, InfoClimateContainer } from './styles';
 
 export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
   const { getOverview, overviewInfo, loadingOverview } = useGetOverviewClimate();
@@ -17,27 +17,20 @@ export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
 
   if (loadingPosition || loadingOverview) {
     return (
-      <View style={{ paddingHorizontal: 24 }}>
+      <Container>
         <Shimmer height={204} radius={24} />
 
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingHorizontal: 34,
-            marginTop: 24,
-          }}
-        >
+        <InfoClimateContainer>
           <InfoClimateLoading />
           <InfoClimateLoading />
           <InfoClimateLoading />
-        </View>
-      </View>
+        </InfoClimateContainer>
+      </Container>
     );
   }
 
   return (
-    <View style={{ paddingHorizontal: 24 }}>
+    <Container>
       <CardClimate
         variant="primary"
         temperature={overviewInfo?.temperature ? `${overviewInfo.temperature}°C` : ''}
@@ -46,7 +39,7 @@ export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
         status={overviewInfo?.description}
       />
 
-      <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 24 }}>
+      <InfoClimateContainer>
         <InfoClimate variant="solid" label={overviewInfo?.rain ? `${overviewInfo.rain}%` : '0%'} />
         <InfoClimate
           variant="solid"
@@ -56,7 +49,7 @@ export function CardDetails({ position, loadingPosition }: CardDetailsProps) {
           variant="solid"
           label={overviewInfo?.humidity ? `${overviewInfo.humidity}%` : ''}
         />
-      </View>
-    </View>
+      </InfoClimateContainer>
+    </Container>
   );
 }
