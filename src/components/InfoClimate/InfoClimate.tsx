@@ -10,6 +10,7 @@ export function InfoClimate({ variant, label }: InfoClimateProps) {
       if (variant === 'solid') {
         return <Solid style={styles.shadow}>{children}</Solid>;
       }
+      // TODO: apply theme
       return <Gradient colors={['#FFFFFF00', '#806EF866']}>{children}</Gradient>;
     },
     [variant],

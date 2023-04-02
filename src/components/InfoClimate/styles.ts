@@ -7,14 +7,14 @@ export const Wrapper = styled(View)`
 `;
 
 export const Solid = styled(View)`
-  background-color: #EEEEEE;
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 15px 12px;
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.radius.md}px;
 `;
 
 export const Gradient = styled(LinearGradient)`
   padding: 15px 12px;
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.radius.md}px;
 `;
 
 export const Icon = styled(Image)`
@@ -24,10 +24,10 @@ export const Icon = styled(Image)`
 `;
 
 export const Label = styled(Text) <{ variant: 'solid' | 'gradient' }>`
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: bold;
-  color: ${({ variant }) => (variant === 'solid' ? '#000000' : '#EEEEEE')};
+  font-size: ${({ theme }) => theme.fontSize.xs}px;
+  line-height: ${({ theme }) => theme.fontSize.xs}px;
+  font-weight: 700;
+  color: ${({ theme, variant }) => (variant === 'solid' ? theme.colors.onBackground : theme.colors.background)};
   margin-top: 8px;
 `;
 
