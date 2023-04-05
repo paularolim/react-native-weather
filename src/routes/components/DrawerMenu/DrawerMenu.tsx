@@ -22,13 +22,13 @@ export function DrawerMenu() {
   const Item = useCallback(
     ({ item }: ListRenderItemInfo<DrawerItemProps>) => (
       <Button.Container background="transparent" onPress={() => navigate(item.route as never)}>
-        <Button.Icon background="gradient" name={item.icon} />
+        <Button.Icon background="gradient" name={item.icon} fill={theme.colors.background} />
         <Button.Label fontWeight="bold" color={theme.colors.onBackground}>
           {item.label}
         </Button.Label>
       </Button.Container>
     ),
-    [navigate, theme.colors.onBackground],
+    [navigate, theme.colors.background, theme.colors.onBackground],
   );
 
   return (
@@ -51,7 +51,7 @@ export function DrawerMenu() {
           hasShadow
           onPress={() => navigate('Settings' as never)}
         >
-          <Button.Icon name="settings" />
+          <Button.Icon name="settings" fill={theme.colors.background} />
           <Button.Label color={theme.colors.background} fontWeight="bold" fontSize={14}>
             Configurações
           </Button.Label>

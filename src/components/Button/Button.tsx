@@ -46,19 +46,19 @@ export function ButtonLabel({ children, color, fontSize, fontWeight }: ButtonLab
   );
 }
 
-export function ButtonIcon({ name, background }: ButtonIconProps) {
+export function ButtonIcon({ name, background, fill }: ButtonIconProps) {
   const theme = useTheme();
 
   if (background === 'gradient') {
     return (
       <IconGradient colors={[theme.colors.primary, theme.colors.primaryContainer]}>
-        <Icon name={name} />
+        <Icon name={name} fill={fill} />
       </IconGradient>
     );
   }
   return (
     <IconContainer>
-      <Icon name={name} />
+      <Icon name={name} fill={fill} />
     </IconContainer>
   );
 }

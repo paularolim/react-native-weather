@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { ColorValue } from 'react-native';
 
 import { IconName } from '@components/Icon';
 
@@ -23,4 +24,5 @@ export interface ButtonLabelProps {
 export interface ButtonIconProps {
   name: IconName;
   background?: 'default' | 'gradient';
+  fill?: ColorValue;
 }

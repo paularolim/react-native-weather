@@ -25,8 +25,8 @@ const options: Record<IconName, React.FC<SvgProps>> = {
   graph,
 };
 
-export function Icon({ name }: IconProps) {
+export function Icon({ name, fill }: IconProps) {
   const Component = options[name];
 
-  return <Component />;
+  return <Component fill={fill} />;
 }
