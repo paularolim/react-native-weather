@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 
 import { Home } from '@screens/Home';
+import { Settings } from '@screens/Settings';
 
 import { DrawerMenu } from './components/DrawerMenu';
 import { DrawerParamList } from './types';
@@ -16,6 +17,7 @@ export function AppRoutes() {
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{ headerShown: false }} drawerContent={drawerContent}>
         <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Settings" component={Settings} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
