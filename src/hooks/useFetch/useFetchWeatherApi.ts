@@ -11,7 +11,7 @@ const httpClient: AxiosInstance = axios.create({ baseURL, params: { appid } });
 const headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
 
 export function useFetchWeatherApi<T>(): UseFetchApiReturn<T> {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [data, setData] = useState<T | null>(null);
 
