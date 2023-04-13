@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { FlatList, View } from 'react-native';
+import { useTheme } from 'styled-components';
 
 import { BalloonClimate } from '@components/BallonClimate';
 import { Button } from '@components/Button';
@@ -10,6 +11,8 @@ import { Container, Header, Today } from './styles';
 import { HourDetailsProps } from './types';
 
 export function HourDetails({ position }: HourDetailsProps) {
+  const theme = useTheme();
+
   const { getTodayClimate, todayClimateInfo, loadingTodayClimate } = useGetTodayClimate();
 
   const Separator = useCallback(() => <View style={{ width: 12 }} />, []);
@@ -58,10 +61,10 @@ export function HourDetails({ position }: HourDetailsProps) {
       <Header>
         <Today>Hoje</Today>
         <Button.Container background="transparent">
-          <Button.Label color="#5896FD" fontSize={18}>
+          <Button.Label color={theme.colors.primary} fontSize={18}>
             Próximos 7 dias
           </Button.Label>
-          <Button.Icon name="arrow-right" />
+          <Button.Icon name="arrow-right" fill={theme.colors.primary} />
         </Button.Container>
       </Header>
       <FlatList
