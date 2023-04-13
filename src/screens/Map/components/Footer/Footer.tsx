@@ -3,6 +3,7 @@ import { FlatList, View } from 'react-native';
 
 import { BalloonClimate } from '@components/BallonClimate';
 import { CardClimate } from '@components/CardClimate';
+import { Shimmer } from '@components/Shimmer';
 import { useGetOverviewClimate } from '@hooks/useGetOverviewClimate';
 import { useGetTodayClimate } from '@hooks/useGetTodayClimate';
 
@@ -34,6 +35,14 @@ export function Footer({ position, loadingPosition }: FooterProps) {
   useEffect(() => {
     getTodayClimate(position);
   }, [getTodayClimate, position]);
+
+  if (loadingOverview || loadingTodayClimate || loadingPosition) {
+    return (
+      <Container>
+        <Shimmer height={269} radius={24} />
+      </Container>
+    );
+  }
 
   return (
     <Container>
