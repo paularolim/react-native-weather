@@ -17,7 +17,7 @@ export interface ButtonContainerProps {
 export interface ButtonLabelProps {
   children: string;
   color?: string;
-  fontSize?: number
+  fontSize?: number;
   fontWeight?: 'normal' | 'bold';
 }
 

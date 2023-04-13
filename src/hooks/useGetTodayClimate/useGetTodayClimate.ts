@@ -9,21 +9,24 @@ import { ForecastResponse, TodayClimateInfo, UseGetTodayClimateReturn } from './
 export function useGetTodayClimate(): UseGetTodayClimateReturn {
   const { data, error, fetch, loading } = useFetchWeatherApi<ForecastResponse>();
 
-  const getTodayClimate = useCallback((position: GeolocationProps | null) => {
-    if (position && position.latitude && position.longitude) {
-      fetch({
-        method: 'get',
-        url: 'data/2.5/forecast',
-        params: {
-          lat: position.latitude,
-          lon: position.longitude,
-          units: 'metric',
-          lang: 'pt_br',
-          cnt: 9,
-        },
-      });
-    }
-  }, [fetch]);
+  const getTodayClimate = useCallback(
+    (position: GeolocationProps | null) => {
+      if (position && position.latitude && position.longitude) {
+        fetch({
+          method: 'get',
+          url: 'data/2.5/forecast',
+          params: {
+            lat: position.latitude,
+            lon: position.longitude,
+            units: 'metric',
+            lang: 'pt_br',
+            cnt: 9,
+          },
+        });
+      }
+    },
+    [fetch],
+  );
 
   const todayClimateInfo = useMemo(() => {
     if (data) {

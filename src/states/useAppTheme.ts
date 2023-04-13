@@ -3,7 +3,11 @@ import { useAtom } from 'jotai';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import { useCallback } from 'react';
 
-const darkModeAtom = atomWithStorage('darkMode', false, createJSONStorage(() => AsyncStorage));
+const darkModeAtom = atomWithStorage(
+  'darkMode',
+  false,
+  createJSONStorage(() => AsyncStorage),
+);
 
 export function useAppTheme() {
   const [darkMode, setDarkMode] = useAtom(darkModeAtom);

@@ -23,8 +23,7 @@ export interface CommonBalloonClimateProps {
 
 export type ConditionalBalloonClimateProps = InfoDayProps | InfoHourProps;
 
-export type BalloonClimateProps = CommonBalloonClimateProps &
-  ConditionalBalloonClimateProps;
+export type BalloonClimateProps = CommonBalloonClimateProps & ConditionalBalloonClimateProps;
 
 export interface ContainerProps {
   children: ReactNode;

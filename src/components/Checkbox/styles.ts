@@ -7,10 +7,10 @@ export const Container = styled(TouchableOpacity)`
   justify-content: space-between;
 `;
 
-export const Rounded = styled(View) <{ checked: boolean }>`
+export const Rounded = styled(View)<{ checked: boolean }>`
   width: 20px;
   height: 20px;
-  
+
   border-radius: ${({ theme }) => theme.radius.xsm}px;
 
   ${({ checked }) => {

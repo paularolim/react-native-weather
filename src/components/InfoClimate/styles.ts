@@ -23,11 +23,12 @@ export const Icon = styled(Image)`
   resize-mode: contain;
 `;
 
-export const Label = styled(Text) <{ variant: 'solid' | 'gradient' }>`
+export const Label = styled(Text)<{ variant: 'solid' | 'gradient' }>`
   font-size: ${({ theme }) => theme.fontSize.xs}px;
   line-height: ${({ theme }) => theme.fontSize.xs}px;
   font-weight: 700;
-  color: ${({ theme, variant }) => (variant === 'solid' ? theme.colors.onBackground : theme.colors.background)};
+  color: ${({ theme, variant }) =>
+    variant === 'solid' ? theme.colors.onBackground : theme.colors.background};
   margin-top: 8px;
 `;
 

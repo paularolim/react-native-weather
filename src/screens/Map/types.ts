@@ -4,4 +4,4 @@ import { DrawerParamList } from '@routes/types';
 
 type ScreenProps = DrawerScreenProps<DrawerParamList, 'Map'>;
 
-export type MapProps = ScreenProps
+export type MapProps = ScreenProps;

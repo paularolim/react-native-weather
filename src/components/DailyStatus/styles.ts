@@ -6,7 +6,7 @@ export const Container = styled(View)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 12px;
   border-radius: 12px;
 `;
@@ -15,7 +15,7 @@ export const Date = styled(Text)`
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
-  color: #5896FD;
+  color: #5896fd;
 `;
 
 export const Temperature = styled(View)`
@@ -27,14 +27,14 @@ export const MinLabel = styled(Text)`
   font-size: 24px;
   line-height: 36px;
   font-weight: bold;
-  color: #8D8D8D;
+  color: #8d8d8d;
 `;
 
 export const MaxLabel = styled(Text)`
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
-  color: #8D8D8D;
+  color: #8d8d8d;
 `;
 
 export const StatusContainer = styled(View)`
@@ -51,7 +51,7 @@ export const StatusLabel = styled(Text)`
   font-size: 12px;
   line-height: 18px;
   font-weight: bold;
-  color: #806EF8;
+  color: #806ef8;
   margin-top: 10px;
 `;
 

@@ -1,3 +1,3 @@
 import { GetPositionOut } from '@hooks/useGetPosition';
 
-export type HourDetailsProps = Omit<GetPositionOut, 'getPosition'>
+export type HourDetailsProps = Omit<GetPositionOut, 'getPosition'>;

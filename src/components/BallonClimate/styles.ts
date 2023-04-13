@@ -11,7 +11,7 @@ export const Solid = styled(View)`
 
 export const Gradient = styled(LinearGradient)`
   padding: 12px 10px;
-  border-radius:  ${({ theme }) => theme.radius.xlg}px;
+  border-radius: ${({ theme }) => theme.radius.xlg}px;
   align-items: center;
 `;
 
@@ -21,19 +21,19 @@ export const Icon = styled(Image)`
   resize-mode: contain;
 `;
 
-export const Day = styled(Text) <{ active: boolean }>`
+export const Day = styled(Text)<{ active: boolean }>`
   margin-top: 10px;
-  font-size:  ${({ theme }) => theme.fontSize['2xl']}px;
-  line-height:  ${({ theme }) => theme.fontSize['2xl']}px;
+  font-size: ${({ theme }) => theme.fontSize['2xl']}px;
+  line-height: ${({ theme }) => theme.fontSize['2xl']}px;
   /* TODO: apply theme */
   color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
   font-weight: bold;
 `;
 
-export const WeekDay = styled(Text) <{ active: boolean }>`
+export const WeekDay = styled(Text)<{ active: boolean }>`
   margin-top: 3px;
-  font-size:  ${({ theme }) => theme.fontSize.sm}px;
-  line-height:  ${({ theme }) => theme.fontSize.sm}px;
+  font-size: ${({ theme }) => theme.fontSize.sm}px;
+  line-height: ${({ theme }) => theme.fontSize.sm}px;
   /* TODO: apply theme */
   color: ${({ active }) => (active ? '#806EF8' : '#FFFFFF')};
   font-weight: normal;

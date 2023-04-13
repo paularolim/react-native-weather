@@ -23,4 +23,4 @@ export const theme = {
   },
 };
 
-export type ThemeType = typeof theme.light
+export type ThemeType = typeof theme.light;

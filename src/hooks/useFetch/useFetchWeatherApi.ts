@@ -21,16 +21,18 @@ export function useFetchWeatherApi<T>(): UseFetchApiReturn<T> {
     httpClient({
       headers,
       ...params,
-    }).then(({ data: _data }: { data: T }) => {
-      setData(_data);
-      setError('');
-      setLoading(false);
-    }).catch((_error) => {
-      console.log(_error);
-      setData(null);
-      setError(_error?.message);
-      setLoading(false);
-    });
+    })
+      .then(({ data: _data }: { data: T }) => {
+        setData(_data);
+        setError('');
+        setLoading(false);
+      })
+      .catch((_error) => {
+        console.log(_error);
+        setData(null);
+        setError(_error?.message);
+        setLoading(false);
+      });
   }, []);
 
   return { fetch, loading, error, data };
