@@ -65,7 +65,21 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
 
-    elevation: 24,
+    elevation: 8,
+    borderRadius: 30,
+    backgroundColor: '#fff',
   },
-  purpleShadow: { shadowColor: '#806EF8' },
+  purpleShadow: {
+    shadowColor: '#5B47D1',
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+
+    elevation: 8,
+    borderRadius: 30,
+    backgroundColor: '#fff',
+  },
 });

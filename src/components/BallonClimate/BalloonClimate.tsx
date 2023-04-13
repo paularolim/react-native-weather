@@ -31,7 +31,7 @@ export function BalloonClimate({
       }
       if (variant === 'hour' && active) {
         return (
-          <View style={[hasShadow && styles.shadow, styles.purpleShadow]}>
+          <View style={hasShadow && styles.purpleShadow}>
             <Gradient colors={[theme.colors.secondaryContainer, theme.colors.secondary]}>
               {children}
             </Gradient>
