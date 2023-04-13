@@ -1,6 +1,22 @@
-import { Image, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
+
+export const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 12,
+    borderRadius: 24,
+    backgroundColor: '#fff',
+  },
+});
 
 export const Wrapper = styled(View)`
   width: 100%;

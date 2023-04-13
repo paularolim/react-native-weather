@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { View } from 'react-native';
 import { useTheme } from 'styled-components';
 
 import cloud from '@assets/images/cloud-zap.png';
@@ -17,6 +18,7 @@ import {
   ThermalSensation,
   WindIcon,
   Wrapper,
+  styles,
 } from './styles';
 import { CardClimateProps } from './types';
 
@@ -46,24 +48,26 @@ export function CardClimate({
 
   return (
     <Wrapper>
-      <Container colors={gradient}>
-        <Header>
-          <HeaderInfo>
-            <Temperature>{temperature}</Temperature>
-            <ThermalSensation>{thermalSensation}</ThermalSensation>
-          </HeaderInfo>
-        </Header>
-        {date && status && (
-          <Middle>
-            <MiddleInfo>
-              <Status>{status}</Status>
-              <Date>{date}</Date>
-            </MiddleInfo>
-            <WindIcon source={wind} />
-          </Middle>
-        )}
-        {children}
-      </Container>
+      <View style={styles.shadow}>
+        <Container colors={gradient}>
+          <Header>
+            <HeaderInfo>
+              <Temperature>{temperature}</Temperature>
+              <ThermalSensation>{thermalSensation}</ThermalSensation>
+            </HeaderInfo>
+          </Header>
+          {date && status && (
+            <Middle>
+              <MiddleInfo>
+                <Status>{status}</Status>
+                <Date>{date}</Date>
+              </MiddleInfo>
+              <WindIcon source={wind} />
+            </Middle>
+          )}
+          {children}
+        </Container>
+      </View>
       <Icon source={cloud} />
     </Wrapper>
   );
