@@ -4,10 +4,13 @@ import 'react-native-gesture-handler';
 import { useAppTheme } from '@states/useAppTheme';
 import moment from 'moment';
 import React, { useMemo } from 'react';
+import { enableLatestRenderer } from 'react-native-maps';
 import { ThemeProvider } from 'styled-components';
 
 import { AppRoutes } from '@routes/AppRoutes';
 import { theme as themeObj } from '@styles/theme';
+
+enableLatestRenderer();
 
 moment.locale('pt-br');
 
