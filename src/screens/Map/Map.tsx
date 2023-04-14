@@ -1,13 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
+import pin from '@assets/images/pin-sm.png';
 import { Header } from '@components/Header';
 import { useGetPosition } from '@hooks/useGetPosition';
 import { GeolocationProps } from '@services/Geolocation';
 
 import { Footer } from './components/Footer';
 import { defaultPosition } from './mock';
-import { Container, TopContainer, styles } from './styles';
+import { Container, LoadingContainer, TopContainer, styles } from './styles';
 import { MapProps } from './types';
 
 export function Map({ navigation }: MapProps) {
@@ -39,6 +41,14 @@ export function Map({ navigation }: MapProps) {
 
   useEffect(getPosition, [getPosition]);
 
+  if (loadingPosition) {
+    return (
+      <LoadingContainer>
+        <ActivityIndicator size="large" />
+      </LoadingContainer>
+    );
+  }
+
   return (
     <Container>
       <MapView
@@ -49,7 +59,11 @@ export function Map({ navigation }: MapProps) {
         onPress={(event) => setMarker(event.nativeEvent.coordinate)}
       >
         {marker && marker?.latitude && marker?.longitude && (
-          <Marker key="0" coordinate={{ latitude: marker.latitude, longitude: marker.longitude }} />
+          <Marker
+            key="0"
+            coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
+            image={pin}
+          />
         )}
       </MapView>
 

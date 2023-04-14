@@ -6,6 +6,12 @@ export const Container = styled(View)`
   flex: 1;
 `;
 
+export const LoadingContainer = styled(View)`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const TopContainer = styled(SafeAreaView).attrs({ edges: ['top'] })``;
 
 export const styles = StyleSheet.create({ map: { ...StyleSheet.absoluteFillObject } });
