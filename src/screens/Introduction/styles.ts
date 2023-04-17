@@ -27,7 +27,7 @@ export const MainCircle = styled(LinearGradient)`
   padding: ${strokeSize}px;
 `;
 
-export const Circle = styled(LinearGradient) <{ index: number }>`
+export const Circle = styled(LinearGradient)<{ index: number }>`
   width: ${({ index }) => mainCircleSize - strokeSize * 2 * index}px;
   height: ${({ index }) => mainCircleSize - strokeSize * 2 * index}px;
   border-radius: ${mainCircleRadius}px;
