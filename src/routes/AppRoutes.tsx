@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 
 import { Home } from '@screens/Home';
+import { Introduction } from '@screens/Introduction';
 import { Map } from '@screens/Map';
 import { Settings } from '@screens/Settings';
 
@@ -17,6 +18,7 @@ export function AppRoutes() {
   return (
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{ headerShown: false }} drawerContent={drawerContent}>
+        <Drawer.Screen name="Introduction" component={Introduction} />
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Map" component={Map} />
         <Drawer.Screen name="Settings" component={Settings} />
