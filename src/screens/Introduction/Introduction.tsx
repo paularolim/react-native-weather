@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { ListRenderItemInfo } from 'react-native';
 import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated';
 
-import img from '@assets/images/moon-cloud-mid-rain.png';
 import { colors } from '@styles/theme/colors';
 
+import { Image } from './components/Image';
 import { Indicator } from './components/Indicator';
 import { list } from './data';
 import {
@@ -12,7 +12,6 @@ import {
   Container,
   TopContainer,
   Circle,
-  SlideImage,
   BottomSheet,
   IndicatorContainer,
   CarouselContainer,
@@ -58,7 +57,15 @@ export function Introduction() {
             </Circle>
           </Circle>
         </MainCircle>
-        <SlideImage source={img} />
+        {list.map((item, index) => (
+          <Image
+            key={item.id}
+            image={item.image}
+            translateX={translateX}
+            size={list.length}
+            index={index}
+          />
+        ))}
       </TopContainer>
 
       <BottomSheet>

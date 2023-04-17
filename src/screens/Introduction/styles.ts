@@ -1,4 +1,4 @@
-import { Dimensions, Image, Text, View } from 'react-native';
+import { Dimensions, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
@@ -27,18 +27,11 @@ export const MainCircle = styled(LinearGradient)`
   padding: ${strokeSize}px;
 `;
 
-export const Circle = styled(LinearGradient)<{ index: number }>`
+export const Circle = styled(LinearGradient) <{ index: number }>`
   width: ${({ index }) => mainCircleSize - strokeSize * 2 * index}px;
   height: ${({ index }) => mainCircleSize - strokeSize * 2 * index}px;
   border-radius: ${mainCircleRadius}px;
   padding: ${strokeSize}px;
-`;
-
-export const SlideImage = styled(Image)`
-  width: ${width - 140}px;
-  height: ${width - 140}px;
-  resize-mode: contain;
-  position: absolute;
 `;
 
 export const BottomSheet = styled(View)`
