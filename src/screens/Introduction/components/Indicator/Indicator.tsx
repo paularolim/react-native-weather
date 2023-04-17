@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import { Dimensions } from 'react-native';
-import { interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import { interpolate, interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
+
+import { colors } from '@styles/theme/colors';
 
 import { Container } from './styles';
 import { IndicatorProps } from './types';
@@ -16,7 +18,14 @@ export function Indicator({ size, index, translateX }: IndicatorProps) {
       slideSizes,
       slideSizes.map((_, i) => (index === i ? 30 : 10)),
     );
-    return { width: w };
+
+    const bg = interpolateColor(
+      translateX.value,
+      slideSizes,
+      slideSizes.map((_, i) => (index === i ? colors.secondary[30] : colors.secondary[80])),
+    );
+
+    return { width: w, backgroundColor: bg };
   }, []);
 
   return <Container style={style} />;
